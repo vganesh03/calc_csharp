@@ -1,22 +1,18 @@
-using Microsoft.AspNetCore.Mvc;
+using System;
 
-namespace SumCalculator.Controllers
+class Program
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class ValuesController : ControllerBase
+    static void Main(string[] args)
     {
-        [HttpPost]
-        public ActionResult<decimal> CalculateSum([FromBody] Numbers numbers)
-        {
-            var sum = numbers.Number1 + numbers.Number2;
-            return sum;
-        }
-    }
+        Console.Write("Enter the first number: ");
+        double number1 = Convert.ToDouble(Console.ReadLine());
 
-    public class Numbers
-    {
-        public decimal Number1 { get; set; }
-        public decimal Number2 { get; set; }
+        
+        Console.Write("Enter the second number: ");
+        double number2 = Convert.ToDouble(Console.ReadLine());
+        
+        double sum = number1 + number2;
+        Console.WriteLine("The sum of {0} and {1} is: {2}", number1, number2, sum);
+        Console.ReadKey();
     }
 }
